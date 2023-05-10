@@ -7,9 +7,8 @@ import play.api.data._
 import play.api.data.Forms._
 
 case class UserData(name: String, age: Int)
-object UserData {
+object UserData:
   def unapply(data: UserData): Option[(String, Int)] = Some((data.name, data.age))
-}
 
 // NOTE: Add the following to conf/routes to enable compilation of this class:
 /*
@@ -20,7 +19,7 @@ POST    /user        controllers.UserController.userPost()
 /**
  * User form controller for Play Scala
  */
-class UserController @Inject()(mcc: MessagesControllerComponents) extends MessagesAbstractController(mcc) {
+class UserController @Inject()(mcc: MessagesControllerComponents) extends MessagesAbstractController(mcc):
 
   val userForm = Form(
     mapping(
@@ -35,15 +34,13 @@ class UserController @Inject()(mcc: MessagesControllerComponents) extends Messag
 
   def userPost() = Action { implicit request: MessagesRequest[AnyContent] =>
     userForm.bindFromRequest().fold(
-      formWithErrors => {
+      formWithErrors =>
         // binding failure, you retrieve the form containing errors:
-        BadRequest(views.html.user.form(formWithErrors))
-      },
-      userData => {
+        BadRequest(views.html.user.form(formWithErrors)),
+
+      userData =>
         /* binding success, you get the actual value. */       
         /* flashing uses a short lived cookie */ 
         Redirect(routes.UserController.userGet()).flashing("success" -> ("Successful " + userData.toString))
-      }
     )
   }
-}
