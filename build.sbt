@@ -9,10 +9,10 @@ scalaVersion := "3.3.0-RC5"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "6.0.0-M3" % Test
-// scalacOptions ++= Seq(
-  // "-rewrite",
-  // "-indent",
-// )
+scalacOptions ++= Seq(
+  "-rewrite",
+  "-indent",
+)
 
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "com.example.controllers._"
