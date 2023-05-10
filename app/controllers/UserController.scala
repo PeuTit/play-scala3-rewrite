@@ -1,10 +1,10 @@
 package controllers
 
-import javax.inject._
-import play.api.mvc._
+import javax.inject.*
+import play.api.mvc.*
 
-import play.api.data._
-import play.api.data.Forms._
+import play.api.data.*
+import play.api.data.Forms.*
 
 case class UserData(name: String, age: Int)
 object UserData:

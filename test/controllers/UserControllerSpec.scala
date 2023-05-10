@@ -1,13 +1,13 @@
 package controllers
 
-import play.api.mvc._
-import play.api.i18n._
-import org.scalatestplus.play._
+import play.api.mvc.*
+import play.api.i18n.*
+import org.scalatestplus.play.*
 import org.scalatestplus.play.guice.GuiceOneAppPerTest
 import play.api.http.FileMimeTypes
-import play.api.test._
-import play.api.test.Helpers._
-import play.api.test.CSRFTokenHelper._
+import play.api.test.*
+import play.api.test.Helpers.*
+import play.api.test.CSRFTokenHelper.*
 
 import scala.concurrent.ExecutionContext
 
